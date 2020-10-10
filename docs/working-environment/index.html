@@ -35,9 +35,9 @@
         month = "m" + (today.getMonth()+1) ;
         day = "d" + today.getDate() ;
       }
-      document.write('<p style="color:'+log[year][month][day][wind][1]+'">风力:'+log[year][month][day][wind][0]+'级</p>')
-      document.write('<p style="color:'+log[year][month][day][temperature][1]+'">气温:'+log[year][month][day][temperature][0]+'摄氏度</p>')
-      document.write('<p style="color:'+log[year][month][day][rain][1]+'">降水量:'+log[year][month][day][rain][0]+'毫米/小时</p>')
+      document.write('<p style="color:'+log[year][month][day]['wind'][1]+'">风力:'+log[year][month][day]['wind'][0]+'级</p>') ;
+      document.write('<p style="color:'+log[year][month][day]['temperature'][1]+'">气温:'+log[year][month][day]['temperature'][0]+'摄氏度</p>') ;
+      document.write('<p style="color:'+log[year][month][day]['rain'][1]+'">降水量:'+log[year][month][day]['rain'][0]+'毫米/小时</p>') ;
     </script>
   </body>
 </html>
