@@ -61,16 +61,42 @@
         month = "m" + getQueryVariable("m") ;
         var day ;
         day = "d" + getQueryVariable("d") ;
-        var log = {y2020:{m10:{d10:{wind:8.1,temperature:29.5,rain:0},d11:{wind:9,temperature:28.1,rain:0.33},d12:{wind:7.6,temperature:26.8,rain:0.51},d13:{wind:10.3,temperature:25.1,rain:4.97},d14:{wind:10.3,temperature:24.1,rain:39.82},d15:{wind:"没有登记",temperature:"没有登记",rain:"没有登记"}}}} ;
+        var log = {y2020:{m10:{d10:{wind:8.1,temperature:29.5,rain:0},d11:{wind:9,temperature:28.1,rain:0.33},d12:{wind:7.6,temperature:26.8,rain:0.51},d13:{wind:10.3,temperature:25.1,rain:4.97},d14:{wind:10.3,temperature:24.1,rain:39.82},d15:{wind:10.5,temperature:24.1,rain:6.01},d16:{wind:"没有登记",temperature:"没有登记",rain:"没有登记"}}}} ;
         if (year == "y" || month == "m" || day == "d")
         {
           year = "y" + today.getFullYear() ;
           month = "m" + (today.getMonth()+1) ;
           day = "d" + today.getDate() ;
         }
-        document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['wind']]+'">风力:'+log[year][month][day]['wind']+'级</p>') ;
+        if (log[year][month][day]['wind'] != "没有登记")
+        {
+          if (log[year][month][day]['wind'] > 20)
+          {
+            document.write('<p class="main" style="color:#0000FF">风力:'+log[year][month][day]['wind']+'级</p>') ;
+          }
+          else
+          {
+            document.write('<p class="main" style="color:#0000FF">风力:'+log[year][month][day]['wind']+'级</p>') ;
+          }
+        else
+        {
+          document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['wind']]+'">风力:'+log[year][month][day]['wind']+'级</p>') ;
+        }
         document.write('<p class="main" style="color:'+temperature[''+log[year][month][day]['temperature']]+'">气温:'+log[year][month][day]['temperature']+'摄氏度</p>') ;
-        document.write('<p class="main" style="color:'+rain[''+log[year][month][day]['rain']]+'">降水量:'+log[year][month][day]['rain']+'毫米/小时</p>') ;
+        if (log[year][month][day]['rain'] != "没有登记")
+        {
+          if (log[year][month][day]['rain'] > 10.2)
+          {
+            document.write('<p class="main" style="color:#0000FF">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+          }
+          else
+          {
+            document.write('<p class="main" style="color:#0000FF">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+          }
+        else
+        {
+          document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['rain']]+'">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+        }
         document.write('<p class="date">'+year.slice(1)+'年'+month.slice(1)+'月'+day.slice(1)+'日</p>') ;
       }
     </script>
