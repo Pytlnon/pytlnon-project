@@ -76,7 +76,7 @@
           }
           else
           {
-            document.write('<p class="main" style="color:#0000FF">风力:'+log[year][month][day]['wind']+'级</p>') ;
+            document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['wind']]+'">风力:'+log[year][month][day]['wind']+'级</p>') ;
           }
         }
         else
@@ -92,7 +92,7 @@
           }
           else
           {
-            document.write('<p class="main" style="color:#0000FF">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+            document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['rain']]+'">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
           }
         }
         else
