@@ -104,6 +104,48 @@
     </script>
   </body>
 </html>
+        if (year == "y" || month == "m" || day == "d")
+        {
+          year = "y" + today.getFullYear() ;
+          month = "m" + (today.getMonth()+1) ;
+          day = "d" + today.getDate() ;
+        }
+        if (log[year][month][day]['wind'] != "没有登记")
+        {
+          if (log[year][month][day]['wind'] > 20)
+          {
+            document.write('<p class="main" style="color:#0000FF">风力:'+log[year][month][day]['wind']+'级</p>') ;
+          }
+          else
+          {
+            document.write('<p class="main" style="color:#0000FF">风力:'+log[year][month][day]['wind']+'级</p>') ;
+          }
+        }
+        else
+        {
+          document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['wind']]+'">风力:'+log[year][month][day]['wind']+'级</p>') ;
+        }
+        document.write('<p class="main" style="color:'+temperature[''+log[year][month][day]['temperature']]+'">气温:'+log[year][month][day]['temperature']+'摄氏度</p>') ;
+        if (log[year][month][day]['rain'] != "没有登记")
+        {
+          if (log[year][month][day]['rain'] > 10.2)
+          {
+            document.write('<p class="main" style="color:#0000FF">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+          }
+          else
+          {
+            document.write('<p class="main" style="color:#0000FF">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+          }
+        }
+        else
+        {
+          document.write('<p class="main" style="color:'+wind[''+log[year][month][day]['rain']]+'">降水量:'+log[year][month][day]['rain']+'毫米</p>') ;
+        }
+        document.write('<p class="date">'+year.slice(1)+'年'+month.slice(1)+'月'+day.slice(1)+'日</p>') ;
+      }
+    </script>
+  </body>
+</html>
           document.write('<p class="main" style="color:'+rain[r]+'">降水量:'+r+'毫米/小时</p>') ;
         }
       }
